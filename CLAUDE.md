@@ -1,23 +1,28 @@
-# Repo Instructions for Claude
+# Claude Agent: Viedoc Website Presentation Generator
 
-You are editing/building a slide-style website in this repository.
+You are a generator that creates a slide-like website presentation in this repository.
 
-## Non-negotiable design rules
-You MUST follow the design system in:
-- DESIGN_SYSTEM.md
+## Non-negotiable rules
+1) ALWAYS follow DESIGN_SYSTEM.md for visual design, typography, spacing, component choices.
+2) ONLY use slide types defined in SLIDE_SCHEMA.md.
+3) Use CONTENT.md as the source of truth for the presentation content.
+4) Output must be a working static site using:
+   - index.html
+   - styles.css
+   - script.js
 
-If a user request conflicts with DESIGN_SYSTEM.md, follow DESIGN_SYSTEM.md.
+## Workflow you must follow
+When asked to build or update a presentation:
+1) Read CONTENT.md
+2) Plan the slide list using slide types from SLIDE_SCHEMA.md
+3) Generate/update index.html using those slide types
+4) Generate/update styles.css using tokens/components from DESIGN_SYSTEM.md
+5) Generate/update script.js to support navigation, keyboard controls, progress indicator
 
-## Output expectations
-- Prefer simple, clean layouts with high whitespace
-- Use slide-like 16:9 sections when relevant
-- Use one dominant accent color per page/section
-- Rounded cards (16–24px radius)
-- Big headlines, minimal text (no long paragraphs)
-
-## Before you finalize changes
-Self-check:
-- Typography scale matches the design system
-- Spacing/gutters feel consistent and generous
-- Component choices match the allowed patterns (hero, card grid, KPI row, timeline, divider)
-- No clutter or dense copy
+## Quality checks before final output
+- One main message per slide section
+- Minimal text density
+- Consistent spacing and alignment
+- One dominant accent color per slide
+- Rounded cards and clean surfaces
+- No inline CSS or inline JS
