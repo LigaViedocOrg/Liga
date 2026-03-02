@@ -1,0 +1,132 @@
+/* styles.css */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d0d0d;
+  color: #e0e0e0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 60px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.slide.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide 1 - Title */
+.slide-1 {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+}
+.slide-1 h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00d2ff, #7b2ff7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+.slide-1 p {
+  font-size: 1.5rem;
+  color: #888;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Slide 2 - Agenda */
+.slide-2 {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+}
+.slide-2 h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #00d2ff;
+}
+.slide-2 ul {
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 2.5;
+}
+.slide-2 ul li::before {
+  content: "▸ ";
+  color: #7b2ff7;
+}
+
+/* Slide 3 - Thank You */
+.slide-3 {
+  background: linear-gradient(135deg, #16213e 0%, #1a1a2e 50%, #0d0d0d 100%);
+}
+.slide-3 h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7b2ff7, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+.slide-3 p {
+  font-size: 1.3rem;
+  color: #888;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav button:hover { background: rgba(255, 255, 255, 0.15); }
+.nav button:disabled { opacity: 0.3; cursor: default; }
+.nav .counter {
+  font-size: 0.95rem;
+  color: #666;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Dots */
+.dots {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+.dots span.active { background: #00d2ff; }
