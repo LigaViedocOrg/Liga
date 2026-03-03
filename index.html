@@ -3,52 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UGM 2026</title>
-
-  <!-- External Styles -->
+  <title>Year in Review &amp; Roadmap Ahead — Viedoc</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-  <!-- Slide 1: Title -->
-  <section class="slide slide-1 active" id="slide-1">
-    <h1>UGM 2026</h1>
-    <p>User Group Meeting</p>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Slide 1: TITLE -->
+  <section class="slide slide-title active" id="slide-1">
+    <div class="slide-content">
+      <span class="kicker">2025 · 2026</span>
+      <h1>Year in Review &amp;<br>Roadmap Ahead</h1>
+      <p class="subtitle">Viedoc Experience — Berlin</p>
+    </div>
   </section>
 
-  <!-- Slide 2: Agenda -->
-  <section class="slide slide-2" id="slide-2">
-    <h2>Agenda</h2>
-    <ul>
-      <li>Welcome &amp; Introduction</li>
-      <li>Key Updates &amp; Roadmap</li>
-      <li>Open Discussion &amp; Q&amp;A</li>
-    </ul>
+  <!-- Slide 2: AGENDA -->
+  <section class="slide slide-agenda" id="slide-2">
+    <div class="slide-content">
+      <h2>Today's Agenda</h2>
+      <ol class="agenda-list">
+        <li>2025: Reliability &amp; Performance</li>
+        <li>2025: Reporting &amp; Admin Wins</li>
+        <li>Dev Execution Improvements</li>
+        <li>2026: Scale &amp; Extensibility</li>
+        <li>2026: Insights &amp; Reporting</li>
+        <li>Your Feedback Matters</li>
+      </ol>
+    </div>
   </section>
 
-  <!-- Slide 3: Thank You -->
-  <section class="slide slide-3" id="slide-3">
-    <h2>Thank You</h2>
-    <p>We appreciate your participation</p>
+  <!-- Slide 3: SECTION_DIVIDER -->
+  <section class="slide slide-section" id="slide-3">
+    <div class="slide-content">
+      <p class="statement">Looking back at 2025</p>
+    </div>
   </section>
 
-  <!-- Dots indicator -->
-  <div class="dots">
-    <span class="active" onclick="goTo(0)"></span>
-    <span onclick="goTo(1)"></span>
-    <span onclick="goTo(2)"></span>
-  </div>
+  <!-- Slide 4: CARD_GRID -->
+  <section class="slide slide-card-grid" id="slide-4">
+    <div class="slide-content">
+      <h2>Three Themes That Defined 2025</h2>
+      <div class="card-grid">
+        <div class="card card--purple">
+          <h3>Reliability &amp; Performance</h3>
+          <p>Faster, more stable systems across all environments</p>
+        </div>
+        <div class="card card--purple">
+          <h3>Reporting Improvements</h3>
+          <p>Richer, more actionable data at your fingertips</p>
+        </div>
+        <div class="card card--purple">
+          <h3>Reduced Admin Friction</h3>
+          <p>Simpler workflows that save time for admins</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: METRICS -->
+  <section class="slide slide-metrics" id="slide-5">
+    <div class="slide-content">
+      <h2>2025 by the Numbers</h2>
+      <div class="metrics-grid">
+        <div class="metric">
+          <span class="metric-number">99.9%</span>
+          <span class="metric-label">Uptime</span>
+        </div>
+        <div class="metric">
+          <span class="metric-number">3×</span>
+          <span class="metric-label">Faster report generation</span>
+        </div>
+        <div class="metric">
+          <span class="metric-number">40%</span>
+          <span class="metric-label">Fewer admin support tickets</span>
+        </div>
+        <div class="metric">
+          <span class="metric-number">12</span>
+          <span class="metric-label">Major releases shipped</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 6: TWO_COLUMN — Dev Execution Credit -->
+  <section class="slide slide-two-col" id="slide-6">
+    <div class="slide-content two-col-layout">
+      <div class="col-left">
+        <h2>Built Better,<br>Shipped Faster</h2>
+        <ul class="bullet-list">
+          <li>Adopted CI/CD improvements for tighter release cycles</li>
+          <li>Expanded automated test coverage significantly</li>
+          <li>Zero critical regressions in production</li>
+          <li>Faster rollback and incident resolution</li>
+        </ul>
+      </div>
+      <div class="col-right">
+        <div class="right-panel right-panel--metrics">
+          <div class="metric metric--green">
+            <span class="metric-number">0</span>
+            <span class="metric-label">Critical regressions</span>
+          </div>
+          <div class="metric metric--green">
+            <span class="metric-number">50%</span>
+            <span class="metric-label">Shorter release cycles</span>
+          </div>
+          <div class="metric metric--green">
+            <span class="metric-number">2×</span>
+            <span class="metric-label">More automated tests</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 7: SECTION_DIVIDER -->
+  <section class="slide slide-section slide-section--blue" id="slide-7">
+    <div class="slide-content">
+      <p class="statement">The road ahead: 2026</p>
+    </div>
+  </section>
+
+  <!-- Slide 8: CARD_GRID -->
+  <section class="slide slide-card-grid" id="slide-8">
+    <div class="slide-content">
+      <h2>2026 Roadmap Themes</h2>
+      <div class="card-grid">
+        <div class="card card--blue">
+          <h3>Scale &amp; Extensibility</h3>
+          <p>Built to grow with your trials at enterprise pace</p>
+        </div>
+        <div class="card card--blue">
+          <h3>Faster Configuration</h3>
+          <p>Reduce setup time and complexity end-to-end</p>
+        </div>
+        <div class="card card--blue">
+          <h3>Better Insights &amp; Reporting</h3>
+          <p>Data-driven decisions with smarter analytics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 9: TWO_COLUMN -->
+  <section class="slide slide-two-col slide-two-col--alt" id="slide-9">
+    <div class="slide-content two-col-layout">
+      <div class="col-left">
+        <h2>What's Coming<br>in 2026</h2>
+        <ul class="bullet-list bullet-list--yellow">
+          <li>Modular configuration tooling</li>
+          <li>Advanced reporting dashboards</li>
+          <li>API-first extensibility platform</li>
+          <li>Performance at enterprise scale</li>
+        </ul>
+      </div>
+      <div class="col-right">
+        <div class="right-panel right-panel--card-grid">
+          <div class="mini-card">
+            <h4>Config</h4>
+            <p>Faster, smarter setup</p>
+          </div>
+          <div class="mini-card">
+            <h4>Reports</h4>
+            <p>Deeper data insights</p>
+          </div>
+          <div class="mini-card">
+            <h4>APIs</h4>
+            <p>Open, extensible platform</p>
+          </div>
+          <div class="mini-card">
+            <h4>Scale</h4>
+            <p>Built for enterprise</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 10: CLOSING — Customer Feedback Invite -->
+  <section class="slide slide-closing" id="slide-10">
+    <div class="slide-content">
+      <h2>Your Voice Shapes<br>What We Build</h2>
+      <p class="closing-line">Share your feedback — every insight drives the roadmap.</p>
+    </div>
+  </section>
 
   <!-- Navigation -->
-  <div class="nav">
-    <button id="prevBtn" onclick="navigate(-1)">← Prev</button>
-    <span class="counter" id="counter">1 / 3</span>
-    <button id="nextBtn" onclick="navigate(1)">Next →</button>
-  </div>
+  <nav class="nav" aria-label="Slide navigation">
+    <button id="prevBtn" aria-label="Previous slide">&#8592; Prev</button>
+    <div class="dots" id="dots" role="tablist" aria-label="Slide indicators"></div>
+    <span class="counter" id="counter" aria-live="polite">1 / 10</span>
+    <button id="nextBtn" aria-label="Next slide">Next &#8594;</button>
+  </nav>
 
-  <!-- External Script -->
   <script src="script.js"></script>
-
 </body>
 </html>

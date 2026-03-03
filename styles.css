@@ -1,132 +1,489 @@
-/* styles.css */
+/* ===========================
+   CSS Custom Properties
+   =========================== */
+:root {
+  --v-black:      #000000;
+  --v-white:      #FFFFFF;
+  --v-gray-700:   #818181;
+  --v-gray-200:   #E6E6E6;
+  --v-gray-100:   #F5F5F5;
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  --v-accent-1:   #8E7DD2; /* purple  */
+  --v-accent-2:   #A7B2E7; /* periwinkle */
+  --v-accent-3:   #7DC6A0; /* green   */
+  --v-accent-4:   #FF865F; /* coral   */
+  --v-accent-5:   #F4B43D; /* yellow  */
+  --v-accent-6:   #1295D8; /* blue    */
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0d0d0d;
-  color: #e0e0e0;
-  height: 100vh;
-  overflow: hidden;
+  --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+  --radius-card:  16px;
+  --radius-sm:    8px;
+  --shadow-card:  0 2px 16px rgba(0, 0, 0, 0.08);
+
+  --progress-width: 0%;
 }
 
+/* ===========================
+   Reset & Base
+   =========================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--v-black);
+}
+
+/* ===========================
+   Progress Bar
+   =========================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--progress-width);
+  background: var(--v-accent-1);
+  transition: width 0.35s ease;
+  z-index: 200;
+}
+
+/* ===========================
+   Slide System
+   =========================== */
 .slide {
   display: none;
-  flex-direction: column;
-  justify-content: center;
+  position: fixed;
+  inset: 0;
   align-items: center;
-  height: 100vh;
-  padding: 60px;
-  text-align: center;
-  animation: fadeIn 0.4s ease;
+  justify-content: center;
+  animation: fadeIn 0.35s ease;
 }
 
-.slide.active { display: flex; }
+.slide.active {
+  display: flex;
+}
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Slide 1 - Title */
-.slide-1 {
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+.slide-content {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 72px;
 }
-.slide-1 h1 {
-  font-size: 5rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #00d2ff, #7b2ff7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
+
+/* ===========================
+   Slide: TITLE
+   =========================== */
+.slide-title {
+  background: var(--v-black);
 }
-.slide-1 p {
-  font-size: 1.5rem;
-  color: #888;
-  letter-spacing: 4px;
+
+.slide-title .slide-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-title .slide-content::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--v-accent-1);
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--v-accent-1);
+  margin-bottom: 16px;
 }
 
-/* Slide 2 - Agenda */
-.slide-2 {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-}
-.slide-2 h2 {
-  font-size: 3rem;
-  margin-bottom: 40px;
-  color: #00d2ff;
-}
-.slide-2 ul {
-  list-style: none;
-  font-size: 1.4rem;
-  line-height: 2.5;
-}
-.slide-2 ul li::before {
-  content: "▸ ";
-  color: #7b2ff7;
-}
-
-/* Slide 3 - Thank You */
-.slide-3 {
-  background: linear-gradient(135deg, #16213e 0%, #1a1a2e 50%, #0d0d0d 100%);
-}
-.slide-3 h2 {
-  font-size: 4rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #7b2ff7, #00d2ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.slide-title h1 {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--v-white);
+  max-width: 14ch;
   margin-bottom: 20px;
 }
-.slide-3 p {
-  font-size: 1.3rem;
-  color: #888;
+
+.slide-title .subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--v-gray-700);
+  font-weight: 400;
 }
 
-/* Navigation */
+/* ===========================
+   Slide: AGENDA
+   =========================== */
+.slide-agenda {
+  background: var(--v-white);
+}
+
+.slide-agenda h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--v-black);
+  margin-bottom: 40px;
+}
+
+.agenda-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: agenda-counter;
+}
+
+.agenda-list li {
+  counter-increment: agenda-counter;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: var(--v-black);
+  font-weight: 500;
+}
+
+.agenda-list li::before {
+  content: counter(agenda-counter, decimal-leading-zero);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--v-accent-6);
+  background: rgba(18, 149, 216, 0.1);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   Slide: SECTION_DIVIDER
+   =========================== */
+.slide-section {
+  background: var(--v-accent-1);
+}
+
+.slide-section--blue {
+  background: var(--v-accent-6);
+}
+
+.slide-section .statement {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--v-white);
+  line-height: 1.1;
+  max-width: 16ch;
+}
+
+/* ===========================
+   Slide: CARD_GRID
+   =========================== */
+.slide-card-grid {
+  background: var(--v-white);
+}
+
+.slide-card-grid h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--v-black);
+  margin-bottom: 40px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--v-gray-100);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+  border-top: 4px solid var(--v-accent-1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card--blue {
+  border-top-color: var(--v-accent-6);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--v-black);
+}
+
+.card p {
+  font-size: 0.875rem;
+  color: var(--v-gray-700);
+  line-height: 1.5;
+}
+
+/* ===========================
+   Slide: METRICS
+   =========================== */
+.slide-metrics {
+  background: var(--v-gray-100);
+}
+
+.slide-metrics h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--v-black);
+  margin-bottom: 52px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-number {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--v-accent-4);
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--v-gray-700);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ===========================
+   Slide: TWO_COLUMN
+   =========================== */
+.slide-two-col {
+  background: var(--v-white);
+}
+
+.slide-two-col--alt {
+  background: var(--v-gray-100);
+}
+
+.two-col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.col-left h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--v-black);
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--v-black);
+  line-height: 1.5;
+}
+
+.bullet-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--v-accent-3);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.bullet-list--yellow li::before {
+  background: var(--v-accent-5);
+}
+
+/* Right panel: metrics layout */
+.right-panel--metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background: var(--v-gray-100);
+  border-radius: var(--radius-card);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.metric--green .metric-number {
+  color: var(--v-accent-3);
+}
+
+/* Right panel: card grid layout */
+.right-panel--card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.mini-card {
+  background: var(--v-white);
+  border-radius: var(--radius-card);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--v-accent-5);
+}
+
+.mini-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--v-black);
+  margin-bottom: 6px;
+}
+
+.mini-card p {
+  font-size: 0.8rem;
+  color: var(--v-gray-700);
+  line-height: 1.4;
+}
+
+/* ===========================
+   Slide: CLOSING
+   =========================== */
+.slide-closing {
+  background: var(--v-black);
+}
+
+.slide-closing .slide-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-closing .slide-content::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--v-accent-2);
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+
+.slide-closing h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--v-white);
+  line-height: 1.1;
+  max-width: 18ch;
+  margin-bottom: 24px;
+}
+
+.closing-line {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--v-accent-2);
+  font-weight: 400;
+  max-width: 50ch;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Navigation Bar
+   =========================== */
 .nav {
   position: fixed;
-  bottom: 30px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-.nav button {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e0e0e0;
-  font-size: 1.1rem;
-  padding: 10px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.nav button:hover { background: rgba(255, 255, 255, 0.15); }
-.nav button:disabled { opacity: 0.3; cursor: default; }
-.nav .counter {
-  font-size: 0.95rem;
-  color: #666;
-  min-width: 50px;
-  text-align: center;
+  gap: 12px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 8px 16px;
 }
 
-/* Dots */
-.dots {
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
+.nav button {
+  background: transparent;
+  border: none;
+  color: var(--v-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: var(--font);
 }
+
+.nav button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.counter {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-width: 40px;
+  text-align: center;
+  font-family: var(--font);
+}
+
+/* ===========================
+   Dots
+   =========================== */
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .dots span {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  transition: background 0.3s;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.25s, transform 0.2s;
   cursor: pointer;
 }
-.dots span.active { background: #00d2ff; }
+
+.dots span.active {
+  background: var(--v-white);
+  transform: scale(1.4);
+}
