@@ -8,12 +8,12 @@
   --v-gray-200:   #E6E6E6;
   --v-gray-100:   #F5F5F5;
 
-  --v-accent-1:   #8E7DD2; /* purple  */
+  --v-accent-1:   #8E7DD2; /* purple     */
   --v-accent-2:   #A7B2E7; /* periwinkle */
-  --v-accent-3:   #7DC6A0; /* green   */
-  --v-accent-4:   #FF865F; /* coral   */
-  --v-accent-5:   #F4B43D; /* yellow  */
-  --v-accent-6:   #1295D8; /* blue    */
+  --v-accent-3:   #7DC6A0; /* green      */
+  --v-accent-4:   #FF865F; /* coral      */
+  --v-accent-5:   #F4B43D; /* yellow     */
+  --v-accent-6:   #1295D8; /* blue       */
 
   --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
   --radius-card:  16px;
@@ -127,51 +127,35 @@ html, body {
 }
 
 /* ===========================
-   Slide: AGENDA
+   Slide: STATEMENT
    =========================== */
-.slide-agenda,
 .slide-statement {
   background: var(--v-white);
 }
 
-.slide-agenda h2,
-.slide-statement h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--v-black);
-  margin-bottom: 40px;
-}
-
-.agenda-list {
-  list-style: none;
+.slide-statement .slide-content {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  counter-reset: agenda-counter;
 }
 
-.agenda-list li {
-  counter-increment: agenda-counter;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+.slide-statement h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
   color: var(--v-black);
+  margin-bottom: 48px;
+  max-width: 20ch;
+}
+
+.slide-statement .bullet-list li {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   font-weight: 500;
 }
 
-.agenda-list li::before {
-  content: counter(agenda-counter, decimal-leading-zero);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--v-accent-6);
-  background: rgba(18, 149, 216, 0.1);
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+.slide-statement .bullet-list li::before {
+  background: var(--v-accent-1);
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
 }
 
 /* ===========================
@@ -336,7 +320,7 @@ html, body {
   background: var(--v-accent-5);
 }
 
-/* Right panel: metrics layout */
+/* Right panel: metrics */
 .right-panel--metrics {
   display: flex;
   flex-direction: column;
@@ -351,7 +335,7 @@ html, body {
   color: var(--v-accent-3);
 }
 
-/* Right panel: card grid layout */
+/* Right panel: card grid */
 .right-panel--card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
