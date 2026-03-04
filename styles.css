@@ -129,11 +129,13 @@ html, body {
 /* ===========================
    Slide: AGENDA
    =========================== */
-.slide-agenda {
+.slide-agenda,
+.slide-statement {
   background: var(--v-white);
 }
 
-.slide-agenda h2 {
+.slide-agenda h2,
+.slide-statement h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--v-black);
