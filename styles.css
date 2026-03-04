@@ -142,8 +142,17 @@ html, body {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
   color: var(--v-black);
-  margin-bottom: 48px;
+  margin-bottom: 12px;
   max-width: 20ch;
+}
+
+.slide-subheader {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  font-weight: 600;
+  color: var(--v-accent-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 36px;
 }
 
 .slide-statement .bullet-list li {
