@@ -1,4 +1,38 @@
 /* ===========================
+   Custom Fonts
+   =========================== */
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('Fonts/MonumentGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('Fonts/MonumentGrotesk-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('Fonts/MonumentGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('Fonts/MonumentGrotesk-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'MonumentGrotesk';
+  src: url('Fonts/MonumentGrotesk-RegularSemi-Mono.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* ===========================
    CSS Custom Properties
    =========================== */
 :root {
@@ -15,7 +49,7 @@
   --v-accent-5:   #F4B43D; /* yellow     */
   --v-accent-6:   #1295D8; /* blue       */
 
-  --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font:         'MonumentGrotesk', system-ui, -apple-system, sans-serif;
   --radius-card:  16px;
   --radius-sm:    8px;
   --shadow-card:  0 2px 16px rgba(0, 0, 0, 0.08);
