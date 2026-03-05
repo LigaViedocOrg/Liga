@@ -1052,6 +1052,56 @@ html, body {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* ===========================
+   Slide: CLOSING FINAL
+   =========================== */
+.closing-side-text {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-size: clamp(0.6rem, 0.85vw, 0.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+.closing-corner-text {
+  position: absolute;
+  bottom: 72px;
+  right: 24px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.closing-thankyou {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: var(--v-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.closing-presenter-name {
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  font-weight: 600;
+  color: var(--v-white);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.closing-presenter-role {
+  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+
 .qr-layout {
   display: flex;
   flex-direction: column;
