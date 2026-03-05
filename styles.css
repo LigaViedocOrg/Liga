@@ -953,6 +953,38 @@ html, body {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
+.rg-cell {
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-content: flex-start;
+}
+
+.rg-card {
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--v-white);
+  line-height: 1.35;
+}
+
+.rg-cell--now .rg-card {
+  background: rgba(125, 198, 160, 0.15);
+  border: 1px solid rgba(125, 198, 160, 0.25);
+}
+
+.rg-cell--next .rg-card {
+  background: rgba(244, 180, 61, 0.12);
+  border: 1px solid rgba(244, 180, 61, 0.22);
+}
+
+.rg-cell--later .rg-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .roadmap-disclaimer {
   font-size: 0.6rem;
   color: rgba(255, 255, 255, 0.25);
