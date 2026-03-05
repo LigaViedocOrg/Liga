@@ -996,9 +996,16 @@ html, body {
    Slide: CLOSING HERO
    =========================== */
 .slide-closing-hero {
-  background-image: url('Media/Ishtar end.jpg');
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+.closing-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .closing-hero-overlay {
