@@ -996,61 +996,60 @@ html, body {
    Slide: CLOSING HERO
    =========================== */
 .slide-closing-hero {
+  padding: 0;
+  background: #000;
   overflow: hidden;
 }
 
-.closing-hero-img {
-  position: absolute;
-  inset: 0;
+.slide-closing-hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  display: block;
 }
 
-.closing-hero-overlay {
+.closing-text {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.2) 100%);
-}
-
-.closing-hero-content {
-  position: relative;
-  z-index: 1;
+  bottom: 80px;
+  right: 72px;
+  text-align: right;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
+  align-items: flex-end;
+  gap: 6px;
+  z-index: 10;
 }
 
-.closing-hero-title {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+.closing-text-title {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
   font-weight: 800;
   color: var(--v-white);
   line-height: 1;
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
 }
 
-.closing-hero-rule {
-  width: 48px;
+.closing-text-rule {
+  width: 40px;
   height: 3px;
   background: var(--v-accent-1);
   border-radius: 2px;
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
-.closing-hero-name {
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
+.closing-text-name {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   font-weight: 700;
   color: var(--v-white);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
-.closing-hero-role {
-  font-size: clamp(0.8rem, 1.1vw, 1rem);
+.closing-text-role {
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .qr-layout {
