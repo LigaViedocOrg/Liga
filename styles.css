@@ -810,9 +810,13 @@ html, body {
 /* ===========================
    Slide: ROADMAP
    =========================== */
-.slide-roadmap {
+.slide.slide-roadmap {
   background: radial-gradient(ellipse at 50% -10%, rgba(142, 125, 210, 0.12) 0%, var(--v-black) 55%);
   align-items: stretch;
+}
+
+.slide-roadmap .slide-content {
+  height: 100%;
 }
 
 .roadmap-layout {
@@ -859,6 +863,7 @@ html, body {
   gap: 5px;
   flex: 1;
   min-height: 0;
+  height: 0; /* forces 1fr rows to use flex-basis, not content */
 }
 
 .rg-corner {
