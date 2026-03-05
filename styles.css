@@ -992,6 +992,60 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* ===========================
+   Slide: CLOSING HERO
+   =========================== */
+.slide-closing-hero {
+  background-image: url('Media/Ishtar end.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.closing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.2) 100%);
+}
+
+.closing-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.closing-hero-title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  color: var(--v-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.closing-hero-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--v-accent-1);
+  border-radius: 2px;
+  margin: 8px 0;
+}
+
+.closing-hero-name {
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  color: var(--v-white);
+}
+
+.closing-hero-role {
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.04em;
+}
+
 .qr-layout {
   display: flex;
   flex-direction: column;
