@@ -160,6 +160,13 @@ html, body {
   font-weight: 400;
 }
 
+.slide-title .presenter {
+  margin-top: 40px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  color: var(--v-white);
+  font-weight: 500;
+}
+
 /* ===========================
    Slide: STATEMENT
    =========================== */
