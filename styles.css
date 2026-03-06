@@ -653,13 +653,14 @@ html, body {
 }
 
 .def-label {
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
+  text-transform: none;
+  letter-spacing: -0.01em;
   color: var(--v-accent-1);
   margin-bottom: 14px;
-  text-shadow: 0 0 12px rgba(142,125,210,0.6);
+  text-shadow: 0 0 20px rgba(142,125,210,0.7);
+  line-height: 1;
 }
 
 .def-divider {
