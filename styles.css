@@ -207,11 +207,16 @@ html, body {
 }
 
 .slide-statement-callout {
-  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
-  font-weight: 700;
-  color: var(--v-accent-1);
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+  margin-top: auto;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 900;
+  color: var(--v-accent-4);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  padding: 20px 0 4px;
+  text-shadow:
+    0 0 18px rgba(255, 134, 95, 0.7),
+    0 0 40px rgba(255, 134, 95, 0.4);
 }
 
 .slide-closing-line {
