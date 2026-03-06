@@ -1135,3 +1135,57 @@ html, body {
   flex-shrink: 0;
   letter-spacing: 0.02em;
 }
+
+/* ===========================
+   Slide 3: page-specific overrides
+   =========================== */
+#slide-3 .slide-3-kicker {
+  font-size: clamp(0.65rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--v-black);
+  opacity: 0.4;
+  margin-bottom: 14px;
+}
+
+#slide-3 h2 {
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+}
+
+#slide-3 .slide-3-divider {
+  border: none;
+  border-top: 1px solid #d0d0d0;
+  margin: 20px 0 32px;
+  width: 100%;
+  max-width: 36ch;
+}
+
+#slide-3 .bullet-list {
+  gap: 28px;
+}
+
+#slide-3 .bullet-list li {
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  gap: 0;
+}
+
+#slide-3 .bullet-list li::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #slide-3 h2 {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+  }
+
+  #slide-3 .bullet-list li {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+}
