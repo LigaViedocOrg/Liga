@@ -653,7 +653,7 @@ html, body {
 }
 
 .def-label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -688,7 +688,7 @@ html, body {
 }
 
 .sprint-num {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -696,7 +696,7 @@ html, body {
 }
 
 .sprint-dur {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--v-white);
 }
@@ -716,8 +716,8 @@ html, body {
 .release-badge {
   background: var(--v-accent-1);
   border-radius: 20px;
-  padding: 7px 20px;
-  font-size: 0.85rem;
+  padding: 8px 22px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--v-white);
   flex-shrink: 0;
@@ -758,7 +758,7 @@ html, body {
 .col-later { border-top: 3px solid rgba(255, 255, 255, 0.35); border: 1px solid rgba(255,255,255,0.14); border-top: 3px solid rgba(255,255,255,0.35); }
 
 .col-def h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: 0.03em;
@@ -778,8 +778,8 @@ html, body {
 }
 
 .col-def ul li {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
   padding-left: 16px;
   position: relative;
   line-height: 1.5;
@@ -822,15 +822,15 @@ html, body {
 .sl-purple     { border-left-color: rgba(142,125,210,0.9); background: linear-gradient(90deg, rgba(142,125,210,0.16) 0%, rgba(255,255,255,0.04) 100%); }
 
 .swimlane-name {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
 .swimlane-desc {
-  font-size: 0.80rem;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.90);
   line-height: 1.5;
 }
 
