@@ -1140,6 +1140,12 @@ html, body {
    Slide 3: page-specific overrides
    =========================== */
 
+/* Center everything in the column */
+#slide-3 .slide-content {
+  text-align: center;
+  align-items: center;
+}
+
 #slide-3 .slide-3-kicker {
   font-size: clamp(0.65rem, 0.85vw, 0.8rem);
   font-weight: 600;
@@ -1147,15 +1153,15 @@ html, body {
   letter-spacing: 0.16em;
   color: var(--v-black);
   opacity: 0.4;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 #slide-3 h2 {
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
   font-weight: 700;
   text-transform: none;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   margin-bottom: 0;
   max-width: none;
   white-space: nowrap;
@@ -1164,43 +1170,51 @@ html, body {
 #slide-3 .slide-3-divider {
   border: none;
   border-top: 1px solid #e6e6e6;
-  margin: 28px 0 44px;
-  width: 55%;
-  max-width: 480px;
+  margin: 36px 0 52px;
+  width: 44%;
+  max-width: 380px;
 }
 
 #slide-3 .bullet-list {
-  gap: 22px;
+  gap: 0;
+  align-items: center;
 }
 
+/* All list items: block so text-align: center applies cleanly */
 #slide-3 .bullet-list li {
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  display: block;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
   font-weight: 400;
-  gap: 0;
+  color: var(--v-gray-700);
+  padding: 14px 0;
 }
 
 #slide-3 .bullet-list li::before {
   display: none;
 }
 
-/* Primary statement — first item, visually dominant */
+/* Primary statement — dominant anchor line */
 #slide-3 .bullet-list .statement-primary {
-  font-size: clamp(1.3rem, 2.1vw, 1.75rem);
-  font-weight: 700;
-  margin-bottom: 16px;
+  display: block;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  color: var(--v-black);
+  line-height: 1.2;
+  padding-bottom: 28px;
 }
 
 @media (max-width: 768px) {
   #slide-3 h2 {
-    font-size: clamp(1.4rem, 5.5vw, 2rem);
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
     white-space: normal;
   }
 
   #slide-3 .bullet-list .statement-primary {
-    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
   }
 
   #slide-3 .bullet-list li {
-    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+    font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+    padding: 10px 0;
   }
 }
