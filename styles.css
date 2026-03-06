@@ -1150,12 +1150,14 @@ html, body {
 }
 
 #slide-3 h2 {
-  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1.08;
   letter-spacing: -0.01em;
   margin-bottom: 0;
+  max-width: none;
+  white-space: nowrap;
 }
 
 #slide-3 .slide-3-divider {
@@ -1182,7 +1184,8 @@ html, body {
 
 @media (max-width: 768px) {
   #slide-3 h2 {
-    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+    white-space: normal;
   }
 
   #slide-3 .bullet-list li {
