@@ -818,7 +818,11 @@ html, body {
    Slide: ROADMAP
    =========================== */
 .slide.slide-roadmap {
-  background: radial-gradient(ellipse at 50% -10%, rgba(142, 125, 210, 0.12) 0%, var(--v-black) 55%);
+  background:
+    radial-gradient(ellipse at 15% 0%,   rgba(142, 125, 210, 0.28) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 100%, rgba(18,  149, 216,  0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%,  rgba(120, 100, 255,  0.06) 0%, transparent 65%),
+    #06060f;
   align-items: stretch;
 }
 
@@ -910,6 +914,10 @@ html, body {
   min-height: 0;
   height: 0;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(142, 125, 210, 0.1), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 /* Radial gradient depth behind grid */
@@ -917,7 +925,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 25% 50%, rgba(125, 198, 160, 0.05) 0%, transparent 55%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(125, 198, 160, 0.07) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -947,25 +955,26 @@ html, body {
 }
 
 .rg-now {
-  background: rgba(125, 198, 160, 0.12);
-  border: 1px solid rgba(125, 198, 160, 0.28);
+  background: rgba(125, 198, 160, 0.18);
+  border: 1px solid rgba(125, 198, 160, 0.38);
   color: var(--v-accent-3);
+  box-shadow: 0 0 14px rgba(125, 198, 160, 0.15);
 }
-.rg-now .rg-col-dot { background: var(--v-accent-3); box-shadow: 0 0 6px var(--v-accent-3); }
+.rg-now .rg-col-dot { background: var(--v-accent-3); box-shadow: 0 0 8px var(--v-accent-3); }
 
 .rg-next {
-  background: rgba(244, 180, 61, 0.07);
-  border: 1px solid rgba(244, 180, 61, 0.18);
+  background: rgba(244, 180, 61, 0.12);
+  border: 1px solid rgba(244, 180, 61, 0.28);
   color: var(--v-accent-5);
 }
-.rg-next .rg-col-dot { background: var(--v-accent-5); box-shadow: 0 0 6px var(--v-accent-5); }
+.rg-next .rg-col-dot { background: var(--v-accent-5); box-shadow: 0 0 8px var(--v-accent-5); }
 
 .rg-later {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.45);
 }
-.rg-later .rg-col-dot { background: rgba(255, 255, 255, 0.2); }
+.rg-later .rg-col-dot { background: rgba(255, 255, 255, 0.3); }
 
 /* Lane header cells */
 .rg-lane-head {
@@ -974,12 +983,21 @@ html, body {
   padding: 0 14px;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--v-white);
-  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-sm);
   border-left: 3px solid transparent;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
+
+/* Per-lane glow on the left border */
+.rg-lane-head.sl-coral      { box-shadow: inset 3px 0 12px rgba(255, 134,  95, 0.15); }
+.rg-lane-head.sl-blue       { box-shadow: inset 3px 0 12px rgba( 18, 149, 216, 0.15); }
+.rg-lane-head.sl-green      { box-shadow: inset 3px 0 12px rgba(125, 198, 160, 0.15); }
+.rg-lane-head.sl-periwinkle { box-shadow: inset 3px 0 12px rgba(167, 178, 231, 0.15); }
+.rg-lane-head.sl-yellow     { box-shadow: inset 3px 0 12px rgba(244, 180,  61, 0.15); }
+.rg-lane-head.sl-purple     { box-shadow: inset 3px 0 12px rgba(142, 125, 210, 0.15); }
 
 /* Content cells — animated dot pattern */
 @keyframes rg-dot-drift {
@@ -1001,58 +1019,68 @@ html, body {
   align-content: flex-start;
 }
 
-/* NOW — brighter, green border glow, elevated */
+/* NOW — vivid, elevated */
 .rg-cell--now {
-  background-color: rgba(125, 198, 160, 0.07);
-  border-color: rgba(125, 198, 160, 0.15);
-  box-shadow: 0 0 18px rgba(125, 198, 160, 0.07);
+  background-color: rgba(125, 198, 160, 0.09);
+  border-color: rgba(125, 198, 160, 0.20);
+  box-shadow: 0 0 24px rgba(125, 198, 160, 0.09);
 }
 
-/* NEXT — amber, slightly muted */
+/* NEXT — warm amber */
 .rg-cell--next {
-  background-color: rgba(244, 180, 61, 0.05);
-  border-color: rgba(244, 180, 61, 0.10);
+  background-color: rgba(244, 180, 61, 0.06);
+  border-color: rgba(244, 180, 61, 0.13);
 }
 
-/* LATER — recedes visually */
+/* LATER — recedes */
 .rg-cell--later {
-  background-color: rgba(255, 255, 255, 0.015);
-  border-color: rgba(255, 255, 255, 0.04);
-  opacity: 0.78;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.05);
+  opacity: 0.72;
 }
 
 .rg-cell:hover {
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.20);
 }
 
-/* Cards */
+/* Cards — glossy with top highlight */
 .rg-card {
-  border-radius: 6px;
-  padding: 6px 10px;
+  border-radius: 7px;
+  padding: 7px 11px;
   font-size: 0.68rem;
   font-weight: 500;
   color: var(--v-white);
   line-height: 1.35;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .rg-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .rg-cell--now .rg-card {
-  background: rgba(125, 198, 160, 0.18);
-  border: 1px solid rgba(125, 198, 160, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 50%),
+    rgba(125, 198, 160, 0.22);
+  border: 1px solid rgba(125, 198, 160, 0.38);
+  box-shadow: 0 2px 8px rgba(125, 198, 160, 0.12);
 }
 
 .rg-cell--next .rg-card {
-  background: rgba(244, 180, 61, 0.12);
-  border: 1px solid rgba(244, 180, 61, 0.22);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 50%),
+    rgba(244, 180, 61, 0.15);
+  border: 1px solid rgba(244, 180, 61, 0.28);
+  box-shadow: 0 2px 8px rgba(244, 180, 61, 0.08);
 }
 
 .rg-cell--later .rg-card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 50%),
+    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 /* Staggered entrance animation */
