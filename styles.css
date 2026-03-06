@@ -1227,3 +1227,109 @@ html, body {
     margin-bottom: 20px;
   }
 }
+
+/* ===========================
+   Slides 6–9: structured list style
+   =========================== */
+
+#slide-6 .slide-subheader,
+#slide-7 .slide-subheader,
+#slide-8 .slide-subheader,
+#slide-9 .slide-subheader {
+  margin-bottom: 80px;
+}
+
+#slide-6 .bullet-list,
+#slide-7 .bullet-list,
+#slide-8 .bullet-list,
+#slide-9 .bullet-list {
+  gap: 0;
+}
+
+#slide-6 .bullet-list li,
+#slide-7 .bullet-list li,
+#slide-8 .bullet-list li,
+#slide-9 .bullet-list li {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-left: 3px solid var(--v-accent-1);
+  padding-left: 16px;
+  margin-bottom: 28px;
+}
+
+#slide-6 .bullet-list li:last-child,
+#slide-7 .bullet-list li:last-child,
+#slide-8 .bullet-list li:last-child,
+#slide-9 .bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+#slide-6 .bullet-list li::before,
+#slide-7 .bullet-list li::before,
+#slide-8 .bullet-list li::before,
+#slide-9 .bullet-list li::before {
+  display: none;
+}
+
+/* ===========================
+   Slide 10: premium content container
+   =========================== */
+
+#slide-10 .slide-subheader {
+  margin-bottom: 60px;
+}
+
+#slide-10 .bullet-list {
+  gap: 0;
+  padding: 40px;
+  border-radius: 16px;
+  background: #f8f8f8;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+#slide-10 .bullet-list li {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-left: 3px solid var(--v-accent-1);
+  padding-left: 16px;
+  margin-bottom: 28px;
+}
+
+#slide-10 .bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+#slide-10 .bullet-list li::before {
+  display: none;
+}
+
+/* ===========================
+   Slide 11: match weight of slide 10
+   =========================== */
+
+#slide-11 .slide-subheader {
+  margin-bottom: 80px;
+}
+
+#slide-11 .bullet-list {
+  gap: 0;
+}
+
+#slide-11 .bullet-list li {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-left: 3px solid var(--v-accent-1);
+  padding-left: 16px;
+  margin-bottom: 32px;
+}
+
+#slide-11 .bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+#slide-11 .bullet-list li::before {
+  display: none;
+}
