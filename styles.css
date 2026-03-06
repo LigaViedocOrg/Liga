@@ -835,31 +835,69 @@ html, body {
   gap: 18px;
 }
 
+/* Header — position context for animated bg */
 .roadmap-header {
   display: flex;
   align-items: flex-end;
   flex-shrink: 0;
+  position: relative;
 }
 
+/* Animated background gradient behind header */
+.roadmap-header::before {
+  content: '';
+  position: absolute;
+  inset: -60% -10%;
+  background: linear-gradient(
+    270deg,
+    rgba(120, 100, 255, 0.07) 0%,
+    rgba(18, 149, 216, 0.05) 33%,
+    rgba(142, 125, 210, 0.07) 66%,
+    rgba(120, 100, 255, 0.07) 100%
+  );
+  background-size: 400% 100%;
+  animation: roadmap-header-glow 20s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.roadmap-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes roadmap-header-glow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Kicker — smaller, reduced visual weight */
 .roadmap-kicker {
   display: inline-block;
-  font-size: 0.6rem;
+  font-size: 0.52rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--v-accent-1);
-  background: rgba(142, 125, 210, 0.15);
-  border: 1px solid rgba(142, 125, 210, 0.3);
+  background: rgba(142, 125, 210, 0.12);
+  border: 1px solid rgba(142, 125, 210, 0.22);
   border-radius: 20px;
   padding: 3px 10px;
   margin-bottom: 8px;
+  opacity: 0.65;
 }
 
+/* Title — gradient text, glow via filter */
 .roadmap-title {
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-  font-weight: 800;
-  color: var(--v-white);
+  font-size: clamp(56px, 6vw, 84px);
+  font-weight: 700;
   line-height: 1;
+  background: linear-gradient(135deg, #1295D8 0%, #8E7DD2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(120, 100, 255, 0.15));
 }
 
 /* Roadmap grid */
@@ -870,7 +908,18 @@ html, body {
   gap: 5px;
   flex: 1;
   min-height: 0;
-  height: 0; /* forces 1fr rows to use flex-basis, not content */
+  height: 0;
+  position: relative;
+}
+
+/* Radial gradient depth behind grid */
+.roadmap-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 50%, rgba(125, 198, 160, 0.05) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .rg-corner {
@@ -898,8 +947,8 @@ html, body {
 }
 
 .rg-now {
-  background: rgba(125, 198, 160, 0.1);
-  border: 1px solid rgba(125, 198, 160, 0.22);
+  background: rgba(125, 198, 160, 0.12);
+  border: 1px solid rgba(125, 198, 160, 0.28);
   color: var(--v-accent-3);
 }
 .rg-now .rg-col-dot { background: var(--v-accent-3); box-shadow: 0 0 6px var(--v-accent-3); }
@@ -932,35 +981,19 @@ html, body {
   letter-spacing: 0.01em;
 }
 
-/* Content cells */
+/* Content cells — animated dot pattern */
+@keyframes rg-dot-drift {
+  0%   { background-position: 0px 0px; }
+  100% { background-position: 42px 42px; }
+}
+
 .rg-cell {
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 14px 14px;
+  animation: rg-dot-drift 45s linear infinite;
   transition: border-color 0.2s;
-}
-
-.rg-cell--now {
-  background-color: rgba(125, 198, 160, 0.04);
-  border-color: rgba(125, 198, 160, 0.08);
-}
-
-.rg-cell--next {
-  background-color: rgba(244, 180, 61, 0.03);
-  border-color: rgba(244, 180, 61, 0.06);
-}
-
-.rg-cell--later {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.04);
-}
-
-.rg-cell:hover {
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-.rg-cell {
   padding: 7px;
   display: flex;
   flex-direction: column;
@@ -968,6 +1001,31 @@ html, body {
   align-content: flex-start;
 }
 
+/* NOW — brighter, green border glow, elevated */
+.rg-cell--now {
+  background-color: rgba(125, 198, 160, 0.07);
+  border-color: rgba(125, 198, 160, 0.15);
+  box-shadow: 0 0 18px rgba(125, 198, 160, 0.07);
+}
+
+/* NEXT — amber, slightly muted */
+.rg-cell--next {
+  background-color: rgba(244, 180, 61, 0.05);
+  border-color: rgba(244, 180, 61, 0.10);
+}
+
+/* LATER — recedes visually */
+.rg-cell--later {
+  background-color: rgba(255, 255, 255, 0.015);
+  border-color: rgba(255, 255, 255, 0.04);
+  opacity: 0.78;
+}
+
+.rg-cell:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Cards */
 .rg-card {
   border-radius: 6px;
   padding: 6px 10px;
@@ -975,11 +1033,16 @@ html, body {
   font-weight: 500;
   color: var(--v-white);
   line-height: 1.35;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rg-card:hover {
+  transform: translateY(-4px);
 }
 
 .rg-cell--now .rg-card {
-  background: rgba(125, 198, 160, 0.15);
-  border: 1px solid rgba(125, 198, 160, 0.25);
+  background: rgba(125, 198, 160, 0.18);
+  border: 1px solid rgba(125, 198, 160, 0.28);
 }
 
 .rg-cell--next .rg-card {
@@ -989,8 +1052,30 @@ html, body {
 
 .rg-cell--later .rg-card {
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
+
+/* Staggered entrance animation */
+@keyframes rg-card-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-roadmap.active .rg-card {
+  animation: rg-card-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* NOW: baseline */
+.slide-roadmap.active .rg-cell--now .rg-card:nth-child(1) { animation-delay: 0ms; }
+.slide-roadmap.active .rg-cell--now .rg-card:nth-child(2) { animation-delay: 80ms; }
+
+/* NEXT: +80ms offset per column */
+.slide-roadmap.active .rg-cell--next .rg-card:nth-child(1) { animation-delay: 80ms; }
+.slide-roadmap.active .rg-cell--next .rg-card:nth-child(2) { animation-delay: 160ms; }
+
+/* LATER: +160ms offset per column */
+.slide-roadmap.active .rg-cell--later .rg-card:nth-child(1) { animation-delay: 160ms; }
+.slide-roadmap.active .rg-cell--later .rg-card:nth-child(2) { animation-delay: 240ms; }
 
 /* ===========================
    Slide: CLOSING HERO
