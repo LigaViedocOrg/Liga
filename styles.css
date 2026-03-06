@@ -1139,6 +1139,64 @@ html, body {
 /* ===========================
    Slide 3: page-specific overrides
    =========================== */
+
+/* --- Decorative background geometry (right half) --- */
+
+/* Layer 1: full-width rightward gradient wash */
+#slide-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, transparent 44%, rgba(142, 125, 210, 0.05) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container: strictly right half, clips its children */
+.slide-3-deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layer 2: large angled plane, tilts upward-right — purple */
+.slide-3-deco::before {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 130%;
+  bottom: -15%;
+  left: -10%;
+  background: rgba(142, 125, 210, 0.09);
+  transform: rotate(-7deg);
+  transform-origin: bottom left;
+}
+
+/* Layer 3: narrower plane, steeper angle — periwinkle */
+.slide-3-deco::after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 120%;
+  top: -10%;
+  right: 0;
+  background: rgba(167, 178, 231, 0.07);
+  transform: rotate(-12deg);
+  transform-origin: top right;
+}
+
+/* Text content sits above decorative layer */
+#slide-3 .slide-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Typography overrides --- */
 #slide-3 .slide-3-kicker {
   font-size: clamp(0.65rem, 0.85vw, 0.8rem);
   font-weight: 600;
@@ -1183,6 +1241,16 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  #slide-3::before {
+    opacity: 0.5;
+  }
+
+  .slide-3-deco {
+    top: 55%;
+    width: 100%;
+    opacity: 0.35;
+  }
+
   #slide-3 h2 {
     font-size: clamp(1.4rem, 5.5vw, 2rem);
     white-space: normal;
